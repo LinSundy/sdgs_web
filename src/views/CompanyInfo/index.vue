@@ -43,12 +43,21 @@
                         </div>
                         <div class="project" v-if="infoData.records&&infoData.records.length">
                             <p class="title">已合作项目<span class="textBg"></span></p>
-                            <ul>
+                            <!--<transition name="fade">
+                                <ul v-for="groupsItem in groups" v-if="groups" :key="groupsItem">
+                                    <li v-for="(item,index) in infoData.records" :key="item.id" :title="item.content"
+                                        v-if="index<(4*groupsItem)">
+                                        {{item.content}}
+                                    </li>
+                                </ul>
+                            </transition>-->
+                            <ul v-if="infoData.records.length">
                                 <li v-for="(item,index) in infoData.records" :key="item.id" :title="item.content"
                                     v-if="index<4">
                                     {{item.content}}
                                 </li>
                             </ul>
+                            <div v-else>暂无</div>
                         </div>
                     </div>
                 </div>
@@ -59,22 +68,27 @@
                 <div class="descContent">{{infoData.info}}</div>
                 <!-- <p>公司地址:<span>6666666</span></p>-->
             </div>
-            <div class="developWrapper"
-                 v-if="(infoData.recent_situation&&infoData.recent_situation!='')&&(infoData.credentials&&infoData.credentials!='')">
+            <div class="developWrapper">
                 <div class="contentWrapper">
-                    <div class="item" v-if="infoData.recent_situation&&infoData.recent_situation!=''">
+                    <div class="item">
                         <img src="../../assets/left_desc.png">
                         <div class="itemCon">
                             <h2>近三年业绩情况</h2>
                             <div class="lineSpace"></div>
-                            <div class="itemDesc">{{infoData.recent_situation}}</div>
+                            <div class="itemDesc" v-if="infoData.recent_situation&&infoData.recent_situation!=''">
+                                {{infoData.recent_situation}}
+                            </div>
+                            <div class="itemDesc" v-else>暂无</div>
                         </div>
                     </div>
-                    <div class="item" v-if="infoData.credentials&&infoData.credentials!=''">
+                    <div class="item">
                         <div class="itemCon">
                             <h2>资质情况</h2>
                             <div class="lineSpace"></div>
-                            <div class="itemDesc">{{infoData.credentials}}</div>
+                            <div class="itemDesc" v-if="infoData.credentials&&infoData.credentials!=''">
+                                {{infoData.credentials}}
+                            </div>
+                            <div class="itemDesc" v-else>暂无</div>
                         </div>
                         <img src="../../assets/right_desc.png">
                     </div>
@@ -93,13 +107,23 @@
         data() {
             return {
                 id: this.$route.query.id || '',
-                infoData: null
+                infoData: null,
+                groups: 0
             }
         },
         methods: {
             getData() {
                 getCompanyInfo({id: this.id}).then(res => {
                     this.infoData = res.data
+                    /*if (this.infoData.records && this.infoData.records.length) {
+                        let len = this.infoData.records.length
+                        if (len % 4) {
+                            this.groups = parseInt(len / 4) + 1
+                        } else {
+                            this.groups = parseInt(len / 4)
+                        }
+                    }*/
+
                 })
             }
         },
