@@ -59,7 +59,8 @@
                 <div class="descContent">{{infoData.info}}</div>
                 <!-- <p>公司地址:<span>6666666</span></p>-->
             </div>
-            <div class="developWrapper">
+            <div class="developWrapper"
+                 v-if="(infoData.recent_situation&&infoData.recent_situation!='')&&(infoData.credentials&&infoData.credentials!='')">
                 <div class="contentWrapper">
                     <div class="item" v-if="infoData.recent_situation&&infoData.recent_situation!=''">
                         <img src="../../assets/left_desc.png">
