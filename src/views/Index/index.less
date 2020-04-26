@@ -1,0 +1,123 @@
+.homeWrapper {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  padding-left: 100px;
+  padding-top: 60px;
+  background-image: linear-gradient(to right, #293c88, #4f65b0);
+  box-sizing: border-box;
+  z-index: 10;
+
+  .logo {
+    width: 320px;
+    height: 80px;
+    background: url("../../assets/logo.png");
+    background-size: contain;
+    margin-bottom: 120px;
+  }
+
+  .rightImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 840px;
+    height: 640px;
+    max-width: 50%;
+    background: url("../../assets/index_right.png");
+    background-size: cover;
+    border-radius: 0 0 0 300px;
+    z-index: 11;
+  }
+
+  .desc {
+    font-size: 18px;
+    color: #ffffff;
+    position: relative;
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 50px;
+    }
+
+    .bgText {
+      position: absolute;
+      left: -5px;
+      top: 51px;
+      width: 390px;
+      height: 28px;
+      background: rgba(15, 15, 15, 0.1);
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .textWrapper {
+      position: relative;
+    }
+
+    .textWrapper:first-child {
+      animation: textmove 1s;
+    }
+
+    .textWrapper:nth-child(2) {
+      animation: textmove 2.5s;
+    }
+
+    .textWrapper:last-child {
+      animation: textmove 3.5s;
+    }
+  }
+
+  .inputBox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    -webkit-animation: inputmove 1.2s linear; /* Chrome, Safari, Opera */
+    animation: inputmove 1.2s linear;
+  }
+}
+
+@keyframes inputmove {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 520px;
+  }
+}
+
+@keyframes textmove {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@media all and (max-height: 768px) {
+  .homeWrapper {
+    .logo {
+      margin-bottom: 60px;
+    }
+    .desc h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+  @keyframes inputmove {
+    0% {
+      top: 100px;
+    }
+    100% {
+      top: 400px;
+    }
+  }
+}

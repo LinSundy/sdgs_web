@@ -1,0 +1,124 @@
+
+.mainContent {
+  width: 940px;
+  background: white;
+  border-radius: 6px;
+
+  .inputWrapper {
+    padding: 4px;
+    border-radius: 6px;
+    background: white;
+    font-size: 20px;
+    color: #ffffff;
+    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.4);
+
+    .mainInput {
+      height: 65px;
+      line-height: 65px;
+      font-size: 20px;
+      color: #ffffff;
+
+      .selectInput {
+        height: 40px;
+        box-sizing: border-box;
+        border: 0;
+        border-right: 1px solid #dddddd;
+        background: #ffffff;
+        border-radius: 0;
+        color: #656a7e;
+
+        .icon-space {
+          margin-left: 10px;
+        }
+      }
+
+      .searchInput {
+        border: 0;
+        width: 160px;
+        line-height: 65px;
+        padding: 0;
+        border-radius: 4px;
+        background: #4c62ad;
+        font-size: 20px;
+        color: #ffffff;
+        transition: all 0.6s;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  .smallInputWrapper {
+    .mainInput {
+      height: 55px !important;
+      line-height: 55px !important;
+      font-size: 18px !important;
+    }
+
+    .searchInput {
+      line-height: 55px !important;
+    }
+  }
+
+  .listShow {
+    visibility: visible;
+  }
+
+  .listHide {
+    visibility: hidden;
+  }
+
+  .typeListWrapper {
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 16px;
+    background: white;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.4);
+
+    .typeList {
+      margin-top: 10px;
+
+      li {
+        display: inline-block;
+        padding: 6px 15px;
+        margin-right: 40px;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      li:hover {
+        border-radius: 15px;
+        background: #e7eef6;
+      }
+
+      .active {
+        border-radius: 15px;
+        background: #e7eef6;
+      }
+    }
+
+    .submitWrapper {
+      text-align: right;
+      margin-top: 15px;
+      margin-bottom: 10px;
+
+      .submitBtn {
+        font-size: 16px;
+        width: 74px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background: #4c62ad;
+        padding: 0;
+        color: #ffffff;
+        border-radius: 4px;
+      }
+    }
+
+  }
+}
+
