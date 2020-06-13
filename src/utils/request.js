@@ -3,7 +3,7 @@ import axios from 'axios'
 
 axios.defaults.withCredentials = true
 const service = axios.create({
-  baseURL: 'http://www.lgm0.com/sdgs-api',
+  baseURL: 'http://www.sdgaosu.cn/sdgs-api',
   timeout: 15000,
 })
 service.interceptors.request.use(config => {
